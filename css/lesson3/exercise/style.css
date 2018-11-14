@@ -1,0 +1,9 @@
+ul>li {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 1.3em;
+    color: white;
+    background-color :#8fd3f4;
+    padding-right: 10%;
+    border-bottom-left-radius: 25%;  
+    }
