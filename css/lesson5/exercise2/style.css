@@ -1,0 +1,86 @@
+header { 
+  background-color: blue;
+}
+
+main {
+    background-color: red;
+}
+
+footer {
+    background-color: green;
+}
+
+nav{
+    background-color: yellow;
+}
+
+aside.summary {
+    background-color: brown;
+}
+
+aside.ads {
+    background-color: purple;
+}
+
+@media screen and (min-width: 900px) {
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .summary {
+        order:1;
+        flex-grow: 1; /*pour remplir l'espace vide*/
+    }
+
+    main {
+        order:2;
+        flex-grow: 1;
+    }
+
+    .ads {
+        order:3;
+        flex-grow: 1;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .summary {
+        display: none;
+    }
+
+    main {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ads {
+        order: -1;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+
+
+
+
+
