@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    height: 300vh;
+}
+
+nav {
+    width: 20%;
+    height: 100vh;
+    background-color: red;
+    position: fixed;
+    left: -20%;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    height: 20vw;
+    width: 100vh;
+    background-color: green;
+    position: fixed;
+    left: -20px;
+    top: 0px;
+}
+
+header.jumbotron {
+    width: 100%;
+    height: 25vh;
+    background-color: blue;
+}
+
+#menu-checkbox-checked + ul {
+    left: 0px;
+}
