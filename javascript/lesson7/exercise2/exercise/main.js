@@ -5,10 +5,10 @@ var test = new Vue({
     },
     methods: {
         incrementer: function() {
-          this.compteur = this.compteur +1;
+          this.compteur ++;
       },
         decrementer: function() {
-          this.compteur = this.compteur -1;
+          this.compteur --;
       }
     }
 });
