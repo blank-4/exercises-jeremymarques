@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>exercice 3 - lesson 7</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input v-model="afficher" type="checkbox">
+            <div v-show="afficher">
+                <input v-model="message" type="text">
+                <button @click="alert()">valider</button>
+                <!-- <p>{{message}}</p> -->
+            </div>
+        </div>
+        
+        <script src="main.js"></script>
+    </body>
+</html>
