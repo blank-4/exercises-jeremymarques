@@ -1,0 +1,14 @@
+{
+  "name": "test-npm",
+  "version": "1.0.0",
+  "description": "## Créer une application En utilisant `npm init`, créez une nouvelle application appelée **test-npm** Node.js dans un dossier dédié.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
+}
