@@ -1,0 +1,70 @@
+Importer les données contenues dans `data.json` dans une base appelée `lesson2`, dans une collection appelée `exercise1`.
+
+Ces données représente des personnes ayant contribué à l'informatique.
+
+```
+mongoimport --db lesson2 --collection exercise1 --jsonArray --file data.json
+```
+
+En utilisant le shell `mongo` pratiquez les commandes vues en cours.
+Ecrivez les commandes pour :
+
+- Lister tous les documents.
+
+    db.exercise1.find()
+
+- Trouver tous les documents ayant pour id `1`
+
+    db.exercise1.find({"_id": 1})
+
+- Trouver toutes les personnes dont le prénom est John.
+
+    db.exercise1.findOne({ "name.first" : 'John' })
+
+- Trouver toutes les personnes qui sont mortes.
+    
+    db.exercise1.find( {
+    death: { $exists: true }
+    } )
+
+- Trouver toutes les personnes qui ne sont pas mortes.
+    
+    db.exercise1.find( {
+    death: { $exists: false }
+    } )
+
+- Trouver toutes les personnes nées après le 01 Janvier 1941.
+    
+    db.exercise1.find( {
+    birth: { $gt: new Date('1941-01-01') },
+    } )
+
+- Trouver toutes les personnes qui n'ont pas eu de récompenses (attribut `awards`).
+
+    db.exercise1.find( {
+    awards: { $exists: false }
+    } )
+    
+- Trouver toutes les personnes qui ont eu une récompense de la "Free Software Foundation" (attribut `awards`)
+    
+    db.exercise1.find({ "awards.by" : 'Free Software Foundation' })
+
+- Donner une date de naissance à Martin Odersky
+
+    db.exercise1.updateOne({ _id: 10 }, { $set: { birth: { "date": "1958-09-05T09:00:00Z"} } })
+
+- Créer une nouvelle personne appelée "Linus Torvalds", renseignez le maximum d'informations à son sujet.
+
+    db.exercise1.insertOne({ _id: 11, name: { first: "Linus", last: "Torvalds" }, birth: { "$date": "1969-12-28T09:00:00Z"}, contribs: ["Linux"] })
+
+- Créer une nouvelle personne appelée "Steve Jobs"
+
+    db.exercise1.insertOne({ _id: 12,  name: { first: "Steve", last: "Jobs"} })
+
+- Ah ouais en fait non, supprimez la
+
+    db.exercise1.remove({ name: { first: "Steve", last: "Jobs"} })
+
+
+
+
